@@ -2,7 +2,8 @@
   "name": "qdraw",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
+  "homepage": ".",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
