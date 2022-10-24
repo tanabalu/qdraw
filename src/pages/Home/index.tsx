@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, MouseEvent, TouchEvent } from "react";
 import Drawer from "@/components/Drawer";
+// import Toolbar from '@/components/Toolbar';
 
 import styles from "./index.module.less";
 
@@ -95,6 +96,7 @@ export default () => {
           暂不支持 canvas
         </canvas>
       </div>
+      {/* <Toolbar /> */}
     </>
   );
 };

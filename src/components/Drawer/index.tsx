@@ -1,4 +1,5 @@
 import React, { MouseEvent, Touch, TouchEvent } from "react";
+import BRUSH from './brush';
 
 interface Props {
   canvas: HTMLCanvasElement;
@@ -15,6 +16,7 @@ export default class Drawer extends React.PureComponent<Props, State> {
   isReDrawing: boolean;
   timeId: NodeJS.Timeout | null;
   animateArr: (number | number[])[];
+  currentBrush: Record<string, string | number>;
   constructor(props: Props) {
     super(props);
     this.state = {};
@@ -26,10 +28,11 @@ export default class Drawer extends React.PureComponent<Props, State> {
     this.isReDrawing = false;
     this.timeId = null;
     this.animateArr = [];
+    this.currentBrush = BRUSH[0];
   }
 
   init() {
-    // 初始化画笔
+    // 设置画笔
     this.setBrush();
   }
 
@@ -57,11 +60,8 @@ export default class Drawer extends React.PureComponent<Props, State> {
   }
 
   setBrush() {
-    const { canvas } = this;
-    canvas.lineWidth = 2;
-    canvas.lineJoin = "round";
-    canvas.shadowColor = "#000";
-    canvas.shadowBlur = 4;
+    let { canvas, currentBrush } = this;
+    Object.assign(canvas, currentBrush);
   }
 
   download() {

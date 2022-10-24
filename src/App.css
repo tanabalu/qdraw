@@ -1,5 +1,9 @@
 @import 'antd/dist/antd.css';
 
+#root {
+  user-select: none;
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
