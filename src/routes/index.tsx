@@ -7,6 +7,6 @@ const routesConfig: RouteConfig[] = [
     exact: true,
     component: Home
   },
-]
+];
 
 export default routesConfig;
